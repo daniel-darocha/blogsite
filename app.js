@@ -15,6 +15,12 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+// Global Variables
+
+const posts = [];
+
+
+// ---- Get Routes
 
 app.get("/", function(req,res){
 
@@ -34,6 +40,21 @@ app.get("/contact", function(req,res){
 app.get("/about", function(req,res){
 
   res.render('about',{aboutContent: aboutContent});
+});
+
+// ---- Post Routes
+
+app.post('/compose', function(req,res){
+
+const post = {
+postTitle: req.body.title, 
+postBody: req.body.content
+};
+
+posts.push(post);
+console.log(posts)
+
+res.redirect("/");
 });
 
 
