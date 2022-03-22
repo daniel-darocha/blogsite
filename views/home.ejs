@@ -1,10 +1,11 @@
 <%- include('./partials/header.ejs') %>
 <h1>First Post</h1>
 <p><%= homeStartingContent %> </p>
+
 <% posts.forEach(function(p){  %>
 <% console.log(p.postTitle); %>
     <h1><%=p.postTitle %></h1>
-    <p><%=p.postBody %></p>  
+    <p><%=p.postBody %></p> 
 <% }) %> 
 
 

@@ -43,4 +43,7 @@
 #formButton {
     margin-top: 2%;
 }
-
+#composeBtn{
+    color: black;
+    font-weight: bold;
+}
